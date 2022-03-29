@@ -13,5 +13,6 @@ namespace HshBooks.Models
         [Required]
         [MaxLength(50)]
         public string Nmae { get; set; }
+        public object Name { get; set; }
     }
 }
