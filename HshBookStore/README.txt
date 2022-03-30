@@ -38,3 +38,11 @@ solved the errors.
  moreover i added the empty controller indside areas/admin
 5:13
 - i nmed it categoryController.cs
+6:52
+- created one more folder to the area/admin/view named it category.
+7:16
+- i created the index view inside the category folder and then work little bit on that but as there were no code given for the index file 
+so we cant do anything we have to figure it out but then also i checked the errors sloved it as sson as possible but then also 
+build my project and there was no error detected 
+7:32
+-
