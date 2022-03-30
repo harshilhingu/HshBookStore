@@ -1,3 +1,5 @@
+using HshBooks.DataAccess.Repository;
+using HshBooks.DataAccess.Repository.IRepository;
 
 using HshBookStore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
@@ -35,6 +37,7 @@ namespace HshBookStore
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 

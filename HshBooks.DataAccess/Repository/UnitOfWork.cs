@@ -1,14 +1,13 @@
 ﻿
 using HshBooks.DataAccess.Repository.IRepository;
 using HshBookStore.DataAccess.Data;
-using HshBooks.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HshBooks.DataAccess.Repository
 {
-    public class UnitOfWork
+    public class UnitOfWork :  IUnitOfWork
     {
         private readonly ApplicationDbContext _db;
         public UnitOfWork(ApplicationDbContext db)
@@ -20,5 +19,13 @@ namespace HshBooks.DataAccess.Repository
         public ICategoryRepository Category { get; private set; }
         public ISP_Call SP_Call { get; private set; }
 
+        public void Dispose()
+        {
+            _db.Dispose();
+        }
+        public void Save()
+        {
+            _db.SaveChanges();
+        }
     }
 }

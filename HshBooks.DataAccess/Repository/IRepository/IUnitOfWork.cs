@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HshBooks.DataAccess.Repository.IRepository
 {
-    interface UnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
 
     {
         ICategoryRepository Category { get; }
