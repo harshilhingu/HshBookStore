@@ -1,6 +1,6 @@
 ﻿using HshBooks.DataAccess.Repository;
 using HshBooks.DataAccess.Repository.IRepository;
-
+using HshBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,6 +21,20 @@ namespace HshBookStore.Areas.Admin.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult Upsert(int? id)
+        {
+            Category category = new Category();
+            if (id == null)
+            {
+                return View(category);
+            }
+            category = _unitOfWork.Category.Get(id.GetValueOrDefault());
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
         }
         #region API CALLS
         [HttpGet]
