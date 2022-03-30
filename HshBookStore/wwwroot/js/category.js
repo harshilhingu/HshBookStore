@@ -22,7 +22,7 @@ function loadDataTable() {
         <i class="fas sa-edit"></i>
 
     </a>
-    <a class="btn btn-danger text-white" style="cursor:pointer">
+   <a onclick=Delete("/Admin/Category/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
         <i class="fa-thin fa-comment-pen"></i>
     </a>
 </div>
